@@ -1,0 +1,12 @@
+.profile {
+  display: inline-block;
+}
+  .profile img {
+    height: 200px;
+    width: auto;
+  }
+
+.details {
+  display: inline-block;
+  margin-left: 20px;
+}

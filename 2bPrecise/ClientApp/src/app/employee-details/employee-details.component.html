@@ -1,0 +1,43 @@
+
+<div *ngIf="employee">
+  <div class="profile">
+    <img src="{{employee.imgUrl}}" alt="{{employee.lastName}}" />
+  </div>
+  <div class="details">
+    <div>
+      <span>Name: </span>
+      <span>{{employee.firstName + ' ' + employee.lastName}}</span>
+    </div>
+    <div>
+      <span>Position: </span>
+      <span>{{employee.getPositionText()}}</span>
+    </div>
+    <hr />
+    <div *ngIf="manager">
+      <span>Manager: </span>
+      <span>{{manager.firstName + ' ' + manager.lastName}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="reports">
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th>Employee Id</th>
+          <th>Report Text</th>
+          <th>Issued Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let report of reports">
+          <td>{{ report.employeeId }}</td>
+          <td>{{ report.reportText }}</td>
+          <td>{{ report.issuedDate }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
